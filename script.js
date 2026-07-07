@@ -10,32 +10,30 @@ function nextPage() {
 }
 
 function moveButton() {
-    // Track no button click/hover
+    // Track no button click
     if (typeof gtag !== 'undefined') {
         gtag('event', 'click', {
             'event_category': 'button',
             'event_label': 'no'
         });
     }
-    
-    // Check if mobile device
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
-    
-    if (isMobile) {
-        // On mobile, redirect to another page instead of moving
-        window.location.href = "no.html";
+
+    const button = document.getElementById("noButton");
+    if (!button) {
         return;
     }
-    
-    // Desktop behavior: move the button
-    let button = document.getElementById("noButton");
-    let maxX = window.innerWidth - button.offsetWidth;
-    let maxY = window.innerHeight - button.offsetHeight;
-    
-    let randomX = Math.floor(Math.random() * maxX);
-    let randomY = Math.floor(Math.random() * maxY);
+
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const maxX = Math.max(0, viewportWidth - button.offsetWidth);
+    const maxY = Math.max(0, viewportHeight - button.offsetHeight);
+
+    const randomX = Math.floor(Math.random() * (maxX + 1));
+    const randomY = Math.floor(Math.random() * (maxY + 1));
 
     button.style.position = "absolute";
     button.style.left = `${randomX}px`;
     button.style.top = `${randomY}px`;
+    button.style.transform = "none";
+    button.blur();
 }
