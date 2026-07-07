@@ -18,6 +18,16 @@ function moveButton() {
         });
     }
     
+    // Check if mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // On mobile, redirect to another page instead of moving
+        window.location.href = "no.html";
+        return;
+    }
+    
+    // Desktop behavior: move the button
     let button = document.getElementById("noButton");
     let maxX = window.innerWidth - button.offsetWidth;
     let maxY = window.innerHeight - button.offsetHeight;
