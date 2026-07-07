@@ -1,0 +1,13 @@
+{
+  "name": "interactive-website",
+  "version": "1.0.0",
+  "description": "Interactive website with moving button functionality",
+  "main": "script.js",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "npx serve . -p 3000"
+  },
+  "keywords": ["html", "javascript", "interactive"],
+  "author": "",
+  "license": "ISC"
+}
