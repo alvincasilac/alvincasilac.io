@@ -9,7 +9,12 @@ function nextPage() {
     window.location.href = "yes.html";
 }
 
-function moveButton() {
+function moveButton(event) {
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+
     // Track no button click
     if (typeof gtag !== 'undefined') {
         gtag('event', 'click', {

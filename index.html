@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H19RC61DT"></script>
     <script>
@@ -26,6 +29,7 @@ body {
     background-color: #fff5f5;
     font-family: 'Indie Flower', cursive;
     overflow: hidden;
+    -webkit-touch-callout: none;
 }
 
 .container {
@@ -76,6 +80,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
     touch-action: manipulation;
 }
 
@@ -128,16 +133,15 @@ body {
 </head>
 <body>
     <div class="container">
-        <h1 class="header_text">Do you really wanna kiss me?</h1>
         <div class="gif_container">
             <img src="https://media.tenor.com/efbi1EpFlVUAAAAi/bugcat-capoo.gif" alt="Cute Capoo GIF">
         </div>
         <div class="buttons">
             <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
-            <button class="btn" id="noButton" onclick="moveButton()">No</button>
+            <button class="btn" id="noButton" onclick="moveButton(event)">No</button>
         </div>
     </div>
 
-    <script src="script.js"></script> 
+    <script src="script.js?v=2"></script> 
 </body>
 </html>
