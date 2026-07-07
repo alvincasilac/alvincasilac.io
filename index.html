@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -22,10 +24,9 @@
 body {
     margin: 0;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
     background-color: #fff5f5;
     font-family: 'Indie Flower', cursive;
     overflow-y: auto;
@@ -37,7 +38,7 @@ body {
     position: relative;
     text-align: center;
     background-color: #ffebee;
-    padding: 40px;
+    padding: 24px;
     border-radius: 20px;
     border: 3px solid #ff6b81;
     box-shadow: 0 8px 20px rgba(255, 107, 129, 0.3);
@@ -48,10 +49,12 @@ body {
 }
 
 .header_text {
-    font-size: 36px;
+    font-size: clamp(24px, 6vw, 36px);
+    line-height: 1.2;
     color: #ff6b81;
-    margin-bottom: 20px;
+    margin: 0 0 16px 0;
     text-shadow: 2px 2px 4px rgba(255, 107, 129, 0.2);
+    word-break: break-word;
 }
 
 .gif_container img {
